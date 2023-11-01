@@ -1,0 +1,18 @@
+torchserve_image: jonggon/torchserve_opencv:0.0.0
+
+namespace: torchserve
+
+torchserve:
+  management_port: 8081
+  inference_port: 8080
+  metrics_port: 8082
+  pvd_mount: /home/hae/models
+  n_gpu: 1 # gpu 대수
+  n_cpu: 4
+  memory_limit: 4Gi
+  memory_request: 4Gi
+  hostpath: /home/jg/torchserve
+  args: ["torchserve", "--start",  "--ncs", "--ts-config", "/home/hae/models/config.properties", "--model-store", "/home/hae/models", "--models", "facedetector.mar", "--foreground"]
+
+deployment:
+  replicas: 1 # gpu 대수

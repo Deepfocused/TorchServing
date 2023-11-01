@@ -1,0 +1,11 @@
+logs
+config.properties
+*.json
+*.md
+*.sh
+*.jpg
+*.jit
+*.mar
+*.py
+.git
+.gitignore
